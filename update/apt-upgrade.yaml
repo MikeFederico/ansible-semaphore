@@ -1,0 +1,10 @@
+---
+- name: Update and upgrade apt packages
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Upgrade packages with apt
+      when: ansible_pkg_mgr == 'apt'
+      ansible.builtin.apt:
+        upgrade: dist

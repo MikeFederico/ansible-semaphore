@@ -6,7 +6,7 @@
   tasks:
     - name: Update and upgrade apt packages  
       ansible.builtin.uri:
-        url: https://notfy.federichome.com/
+        url: https://notfy.federicohome.com/
         method: POST
         body_format: json
         body:

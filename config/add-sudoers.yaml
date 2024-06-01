@@ -8,6 +8,6 @@
       ansible.builtin.lineinfile:
         path: /etc/sudoers
         state: present
-        regexp: '^%sudo'
-        line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+        regexp: '^%yoda'
+        line: '%yoda ALL=(ALL) NOPASSWD: ALL'
         validate: /usr/sbin/visudo -cf %s

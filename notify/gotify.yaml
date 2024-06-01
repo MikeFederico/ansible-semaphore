@@ -1,11 +1,14 @@
 
-- name: Update and upgrade apt packages
+---
+- name: Test Notification
   hosts: all
 
-  ansible.builtin.uri:
-    url: https://notfy.federichome.com/
-    method: POST
-    body_format: json
-    body:
-      token: A_c68XWoVfwsa63
-      message: "Disk space on {{ inventory_hostname }} is above 90%!"
+  tasks:
+    - name: Update and upgrade apt packages  
+      ansible.builtin.uri:
+        url: https://notfy.federichome.com/
+        method: POST
+        body_format: json
+        body:
+          token: A_c68XWoVfwsa63
+          message: "Disk space on {{ inventory_hostname }} is above 90%!"

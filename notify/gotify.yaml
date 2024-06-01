@@ -6,9 +6,9 @@
   tasks:
     - name: Update and upgrade apt packages  
       ansible.builtin.uri:
-        url: https://notify.federicohome.com/
+        url: "https://notify.federicohome.com/message?token=A_c68XWoVfwsa63"
         method: POST
         body_format: json
         body:
-          token: A_c68XWoVfwsa63
+          title: Ansible Test
           message: "Disk space on {{ inventory_hostname }} is above 90%!"

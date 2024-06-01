@@ -1,0 +1,9 @@
+---
+- name: Send Gotify Message
+  ansible.builtin.uri:
+    url: https://notfy.federichome.com/
+    method: POST
+    body_format: json
+    body:
+      token: A_c68XWoVfwsa63
+      message: "Disk space on {{ inventory_hostname }} is above 90%!"

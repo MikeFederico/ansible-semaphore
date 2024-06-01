@@ -1,5 +1,8 @@
-- name: Set authorized keys taken from url
-  ansible.posix.authorized_key:
-    user: yoda
-    state: present
-    key: https://github.com/MikeFederico/ansible-semaphore/blob/main/config/yoda.key
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Set authorized keys taken from url
+      ansible.posix.authorized_key:
+        user: yoda
+        state: present
+        key: https://github.com/MikeFederico/ansible-semaphore/blob/main/config/yoda.key

@@ -2,6 +2,7 @@
 - name: Update and upgrade apt packages
   hosts: all
   become: yes
+  become_user: root
 
   tasks:
     - name: Upgrade packages with apt

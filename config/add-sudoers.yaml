@@ -1,6 +1,6 @@
 ---
 - name: Add ssh key
-  hosts: "{{ new_lxcs | d([]) }}"
+  hosts: all
   become: true
 
     - name: Change sudoers file

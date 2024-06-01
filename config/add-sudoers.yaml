@@ -1,0 +1,12 @@
+---
+- name: Add ssh key
+  hosts: "{{ new_lxcs | d([]) }}"
+  become: true
+
+    - name: Change sudoers file
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%sudo'
+        line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+        validate: /usr/sbin/visudo -cf %s

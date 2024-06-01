@@ -1,6 +1,7 @@
 
 ---
 - name: Send Gotify Message
+  hosts: all
   ansible.builtin.uri:
     url: https://notfy.federichome.com/
     method: POST

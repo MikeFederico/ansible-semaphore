@@ -3,6 +3,7 @@
   hosts: all
   become: true
 
+  tasks:
     - name: Change sudoers file
       ansible.builtin.lineinfile:
         path: /etc/sudoers

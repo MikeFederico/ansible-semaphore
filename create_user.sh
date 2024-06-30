@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Install sudo if not already installed
-apt-get update
+#apt-get update
 apt-get install -y sudo
 
 # Create a user named 'yoda'

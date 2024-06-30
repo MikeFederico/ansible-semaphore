@@ -12,7 +12,7 @@ apt-get install -y sudo
 
 # Create a user named 'yoda'
 username="yoda"
-password="tEGFUsX$32*!w7"  # You should change this to a secure password
+password="dagobah"  # You should change this to a secure password
 
 useradd -m -s /bin/bash "$username"
 echo "$username:$password" | chpasswd

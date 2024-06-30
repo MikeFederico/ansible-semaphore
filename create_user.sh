@@ -12,6 +12,15 @@ apt-get install -y sudo
 
 # Create a user named 'yoda'
 username="yoda"
+
+# Check if the user already exists
+if id "$username" &>/dev/null; then
+    echo "User '$username' already exists."
+    # Add 'yoda' to the sudo group
+    usermod -aG sudo "$username"
+    echo "User 'yoda' has been added to the sudoers group."
+    exit 1
+fi
 password="dagobah"  # You should change this to a secure password
 
 useradd -m -s /bin/bash "$username"

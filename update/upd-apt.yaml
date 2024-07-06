@@ -10,8 +10,26 @@
       when: ansible_pkg_mgr == 'apt'
       ansible.builtin.apt:
         update_cache: true
-
+        
+    - name: Update apt packages  
+      ansible.builtin.uri:
+        url: "https://notify.federicohome.com/message?token=A_c68XWoVfwsa63"
+        method: POST
+        body_format: json
+        body:
+          title: Ansible-apt-update
+          message: "apt update ran on {{ inventory_hostname }}."
+          
     - name: Upgrade packages with apt
       when: ansible_pkg_mgr == 'apt'
       ansible.builtin.apt:
         upgrade: dist
+        
+    - name: Upgrade apt packages  
+      ansible.builtin.uri:
+        url: "https://notify.federicohome.com/message?token=A_c68XWoVfwsa63"
+        method: POST
+        body_format: json
+        body:
+          title: Ansible-apt-upgrade
+          message: "apt upgrade ran on {{ inventory_hostname }}."        
